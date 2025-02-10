@@ -1,0 +1,35 @@
+# 👻
+
+theme = catppuccin-mocha
+
+font-family = "Comic Code Ligatures"
+font-feature = "-liga"
+font-size = 20
+cursor-style = block
+cursor-style-blink = false
+cursor-invert-fg-bg = true
+selection-invert-fg-bg = true
+shell-integration = zsh
+shell-integration-features = no-cursor
+
+macos-titlebar-style = hidden
+macos-option-as-alt = true
+
+confirm-close-surface = false
+window-decoration = true
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = false
+window-inherit-font-size = true
+window-height = 30
+window-width = 80
+link-url = true
+scrollback-limit = 10000
+
+split-divider-color = "#c6d0f5"
+
+auto-update = check
+
+keybind = global:ctrl+space=toggle_quick_terminal
+keybind = ctrl+tab=goto_split:next
+keybind = ctrl+shift+tab=goto_split:previous

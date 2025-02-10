@@ -1,0 +1,71 @@
+[user]
+	name = Steve C
+	email = diceroll123@gmail.com
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[core]
+	editor = nvim
+	autcrlf = input
+	excludesfile = ~/.gitignore_global
+[alias]
+	a = add
+	aa = add -A
+	ap = add -p
+	b = bisect
+	br = branch
+	c = clone
+	cb = checkout -b
+	ck = checkout
+	cm = commit
+	cmt = commit -m
+	cmta = commit --amend
+	cmtf = commit --amend --no-edit
+	cmtt = commit --allow-empty
+	crds = config credential.helper store
+	d = diff
+	dc = diff --cached
+	dm = diff HEAD~ --color-moved=dimmed-zebra
+	dd = commit --dry-run
+	f = fetch
+	g = grep
+	gud = !echo "skill issue"
+	i = init
+	l = log
+	la = log --pretty=format:'[%h] %cd - Committer: %cn (%ce), Author: %an (%ae)'
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ll = log --graph --decorate --oneline --all
+	lo = log --graph --decorate --all
+	ls = ls-files
+	m = mv
+	mr = merge
+	new = checkout -b
+	p = pull
+	ps = push
+	psmi = push origin main
+	psmt = push origin master
+	r = restore
+	rb = rebase
+	rm = rm
+	rmt = remote -v
+	rs = restore
+	rst = restore --staged
+	sh = show
+	st = status
+	t = tag
+	stash-all = stash save --include-untracked
+	ups = config --get remote.origin.url
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[submodule]
+	recurse = true
+[url "git@github"]
+	com = https://github.com/
