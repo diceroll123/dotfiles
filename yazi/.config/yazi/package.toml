@@ -1,0 +1,5 @@
+[plugin]
+deps = [{ use = "yazi-rs/plugins:git", rev = "ae7cb67" }, { use = "yazi-rs/plugins:full-border", rev = "ae7cb67" }, { use = "yazi-rs/plugins:jump-to-char", rev = "ed77c54" }, { use = "yazi-rs/plugins:no-status", rev = "ed77c54" }, { use = "yazi-rs/plugins:smart-enter", rev = "e4aaf43" }, { use = "AnirudhG07/rich-preview", rev = "8be4d27" }, { use = "lpanebr/yazi-plugins:first-non-directory", rev = "7af4fed" }, { use = "AnirudhG07/nbpreview", rev = "1d85745" }, { use = "Lil-Dank/lazygit", rev = "c82794f" }]
+
+[flavor]
+deps = [{ use = "yazi-rs/flavors:catppuccin-mocha", rev = "78d1d19" }]
