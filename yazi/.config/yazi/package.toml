@@ -1,0 +1,49 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "ae7cb67"
+hash = "d1720e2aabad5b5091ac59d3dd01a4a1"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "ae7cb67"
+hash = "92a4414ab6b34504915df23ab0a1a73"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:jump-to-char"
+rev = "ed77c54"
+hash = ""
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:no-status"
+rev = "ed77c54"
+hash = "e79e3c735123146958c6604f5f5a3432"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "e4aaf43"
+hash = "83212e0bfbcb2afbca609a85584b901e"
+
+[[plugin.deps]]
+use = "AnirudhG07/rich-preview"
+rev = "8be4d27"
+hash = "c9a3d0731e7d7340e2c6d6126b1f3aa3"
+
+[[plugin.deps]]
+use = "lpanebr/yazi-plugins:first-non-directory"
+rev = "7af4fed"
+hash = ""
+
+[[plugin.deps]]
+use = "AnirudhG07/nbpreview"
+rev = "1d85745"
+hash = ""
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "c82794f"
+hash = "3b9a1a7fd8afc5d2903e91b50f85e07e"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-mocha"
+rev = "78d1d19"
+hash = "bd940488f6d625cba11614ada6f09aea"
