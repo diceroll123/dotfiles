@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Check if pre-commit binary is installed
+if ! command -v pre-commit &>/dev/null; then
+    echo "pre-commit is not installed."
+fi
+
+pre-commit install
