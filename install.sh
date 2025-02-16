@@ -175,6 +175,7 @@ brew install lua-language-server
 brew install make
 brew install neofetch
 brew install neovim
+brew install node
 brew install onefetch
 brew install parallel
 brew install pngquant
@@ -225,6 +226,9 @@ brew install --cask font-jetbrains-mono-nerd-font
 ## Cargo installations
 # for when things are not available in Brew
 cargo install repgrep
+
+## NPM installations
+npm install -g cronstrue
 
 echo "Running brew cleanup..."
 brew cleanup
