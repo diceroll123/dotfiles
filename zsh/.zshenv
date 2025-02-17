@@ -4,7 +4,6 @@
 # uv
 export PATH="$HOME/.local/bin:$PATH"
 
-# Homebrew (in WSL)
-if [ -d "/home/linuxbrew/.linuxbrew" ]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [ -d "/home/linuxbrew/.linuxbrew/bin" ]; then
+  export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
