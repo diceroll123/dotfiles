@@ -53,6 +53,19 @@ map("v", ">", ">gv")
 -- Replace word under cursor
 map("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word under cursor" })
 
+-- Move to beginning of line, or first character, using HOME
+local function smart_home()
+  local col = vim.fn.col "."
+  if col == 1 then
+    return vim.api.nvim_replace_termcodes("^", true, true, true)
+  else
+    return vim.api.nvim_replace_termcodes("0", true, true, true)
+  end
+end
+
+vim.keymap.set({ "n", "v" }, "<Home>", smart_home, { expr = true, silent = true, desc = "Jump to front of line" })
+
+-- Code Actions
 map("n", "<leader>ca", function()
   require("tiny-code-action").code_action()
 end, {
@@ -60,13 +73,6 @@ end, {
   silent = true,
   desc = "Code Action",
 })
-
--- map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", {
---   desc = "telescope find files",
--- })
--- map("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", {
---   desc = "telescope find all files",
--- })
 
 map("n", "Q", "<nop>", {
   desc = "disabled",
@@ -76,12 +82,15 @@ map("n", "Q", "<nop>", {
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", {
   desc = "Whichkey all keymaps",
 })
-
 map("n", "<leader>wk", function()
   vim.cmd("WhichKey " .. vim.fn.input "WhichKey: ")
 end, {
   desc = "Whichkey query lookup",
 })
+map("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", {
+  desc = "Find keymaps",
+})
+
 -- Comment
 map("n", "<leader>/", "gcc", {
   desc = "Toggle Comment",
@@ -98,40 +107,6 @@ map("n", "<C-n>", function()
 end, {
   desc = "Snacks explorer toggle window",
 })
--- map("n", "<leader>e", function()
---   Snacks.explorer.open()
--- end, {
---   desc = "snacks explorer focus window",
--- })
-
--- telescope
--- map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", {
---   desc = "telescope live grep",
--- })
--- map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", {
---   desc = "telescope find buffers",
--- })
--- map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", {
---   desc = "telescope help page",
--- })
--- map("n", "<leader>ma", "<cmd>Telescope marks<CR>", {
---   desc = "telescope find marks",
--- })
--- map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", {
---   desc = "telescope find oldfiles",
--- })
--- map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", {
---   desc = "telescope find in current buffer",
--- })
--- map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", {
---   desc = "telescope git commits",
--- })
--- map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", {
---   desc = "telescope git status",
--- })
--- map("n", "<leader>pt", "<cmd>Telescope terms<CR>", {
---   desc = "telescope pick hidden term",
--- })
 
 -- Buffers
 map("n", "<S-tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
