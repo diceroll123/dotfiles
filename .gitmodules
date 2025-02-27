@@ -1,3 +1,3 @@
 [submodule "personal"]
 	path = personal
-	url = https://github.com/diceroll123/personal
+	url = git@github.com:diceroll123/personal.git

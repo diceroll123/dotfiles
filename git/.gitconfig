@@ -67,3 +67,5 @@
 	autoStash = true
 [submodule]
 	recurse = true
+[url "git@github"]
+	com = https://github.com/
