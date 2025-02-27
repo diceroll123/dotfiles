@@ -1,3 +1,4 @@
+--- @since 25.2.7
 local function setup(_, opts)
 	local type = opts and opts.type or ui.Border.ROUNDED
 	local old_build = Tab.build
@@ -26,19 +27,24 @@ local function setup(_, opts)
 		}
 
 		local style = THEME.manager.border_style
-		self._base = ya.list_merge(self._base or {}, {
-			ui.Border(ui.Border.ALL):area(self._area):type(type):style(style),
-			ui.Bar(ui.Bar.RIGHT):area(self._chunks[1]):style(style),
-			ui.Bar(ui.Bar.LEFT):area(self._chunks[3]):style(style),
+		self._base = ya.list_merge(
+			self._base or {},
+			{
+				ui.Border(ui.Border.ALL):area(self._area):type(type):style(style),
+				ui.Bar(ui.Bar.RIGHT):area(self._chunks[1]):style(style),
+				ui.Bar(ui.Bar.LEFT):area(self._chunks[3]):style(style),
 
-			bar("┬", c[1].right - 1, c[1].y),
-			bar("┴", c[1].right - 1, c[1].bottom - 1),
-			bar("┬", c[2].right, c[2].y),
-			bar("┴", c[2].right, c[2].bottom - 1),
-		})
+				bar("┬", c[1].right - 1, c[1].y),
+				bar("┴", c[1].right - 1, c[1].bottom - 1),
+				bar("┬", c[2].right, c[2].y),
+				bar("┴", c[2].right, c[2].bottom - 1),
+			}
+		)
 
 		old_build(self, ...)
 	end
 end
 
-return { setup = setup }
+return {
+	setup = setup,
+}
