@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Ask for the administrator password upfront
 sudo -v
 
@@ -191,6 +190,7 @@ brew install shfmt
 brew install ssh-copy-id
 brew install starship
 brew install stow
+brew install tectonic
 brew install tlrc
 brew install tmux
 brew install tokei
