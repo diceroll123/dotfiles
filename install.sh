@@ -47,6 +47,9 @@ if is_macos; then
     defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
     defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool TRUE
 
+    # Disable accent marks popup
+    defaults write -g ApplePressAndHoldEnabled -bool false
+
     # Disable automatic capitalization as it’s annoying when typing code
     defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
