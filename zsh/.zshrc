@@ -48,7 +48,3 @@ source_recursively "$HOME/dotfiles/personal" "zsh_*.sh"
 # brew installations activation
 source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
-if [[ -n $SSH_CONNECTION ]]; then
-  export TERM="xterm"
-fi
