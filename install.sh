@@ -160,7 +160,6 @@ brew install cbonsai
 brew install cmatrix
 brew install coreutils
 brew install delta
-brew install docker
 brew install entr
 brew install eza
 brew install fd
@@ -214,6 +213,7 @@ brew install zsh-syntax-highlighting
 echo "Installing Brew Casks..."
 # {
 [ -n "$is_macos" ] && brew install --cask 1password
+[ -n "$is_macos" ] && brew install --cask docker
 [ -n "$is_macos" ] && brew install --cask firefox
 brew install --cask font-hack-nerd-font
 brew install --cask font-jetbrains-mono-nerd-font
