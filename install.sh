@@ -108,9 +108,6 @@ if is_macos; then
     # Hide desktop icons
     # defaults write com.apple.finder CreateDesktop -bool false && killall Finder
 
-    # Automatically hide and show the Dock
-    defaults write com.apple.Dock autohide -bool TRUE
-
     # Set a blazingly fast keyboard repeat rate
     defaults write NSGlobalDomain KeyRepeat -int 1
     defaults write InitialKeyRepeat -int 10
