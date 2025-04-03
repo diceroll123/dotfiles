@@ -106,7 +106,7 @@ if is_macos; then
     sudo chflags nohidden /Volumes
 
     # Hide desktop icons
-    # defaults write com.apple.finder CreateDesktop -bool false && killall Finder
+    defaults write com.apple.finder CreateDesktop -bool false && killall Finder
 
     # Set a blazingly fast keyboard repeat rate
     defaults write NSGlobalDomain KeyRepeat -int 1
