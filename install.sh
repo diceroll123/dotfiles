@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Ask for the administrator password upfront
 sudo -v
@@ -19,7 +19,7 @@ trap 'kill "$sudo_pid" 2>/dev/null' EXIT
 
 # Set variable for macOS detection
 function is_macos() {
-    [[ "$OSTYPE" =~ ^darwin ]] || return 1
+    [[ "$OSTYPE" == darwin* ]]
 }
 
 if is_macos; then
@@ -166,7 +166,7 @@ brew install eza
 brew install fd
 brew install fzf
 brew install gh
-[ -n "$is_macos" ] && brew install ghostty
+is_macos && brew install ghostty
 brew install halp
 brew install jq
 brew install lazydocker
@@ -197,7 +197,7 @@ brew install tectonic
 brew install tlrc
 brew install tmux
 brew install tokei
-[ -n "$is_macos" ] && brew install trash
+is_macos && brew install trash
 brew install tree
 brew install tree-sitter
 brew install watch
@@ -213,18 +213,18 @@ brew install zsh-syntax-highlighting
 ## Casks
 echo "Installing Brew Casks..."
 # {
-[ -n "$is_macos" ] && brew install --cask 1password
-[ -n "$is_macos" ] && brew install --cask docker
-[ -n "$is_macos" ] && brew install --cask firefox
+is_macos && brew install --cask 1password
+is_macos && brew install --cask docker
+is_macos && brew install --cask firefox
 brew install --cask font-hack-nerd-font
 brew install --cask font-jetbrains-mono-nerd-font
-[ -n "$is_macos" ] && brew install --cask font-sf-pro
-[ -n "$is_macos" ] && brew install --cask github
-[ -n "$is_macos" ] && brew install --cask google-chrome
-[ -n "$is_macos" ] && brew install --cask obsidian
-[ -n "$is_macos" ] && brew install --cask raycast
-[ -n "$is_macos" ] && brew install --cask sublime-text
-[ -n "$is_macos" ] && brew install --cask visual-studio-code
+is_macos && brew install --cask font-sf-pro
+is_macos && brew install --cask github
+is_macos && brew install --cask google-chrome
+is_macos && brew install --cask obsidian
+is_macos && brew install --cask raycast
+is_macos && brew install --cask sublime-text
+is_macos && brew install --cask visual-studio-code
 # }
 
 ## Cargo installations
