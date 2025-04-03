@@ -96,9 +96,6 @@ if is_macos; then
     # Drag windows from anywhere
     defaults write -g NSWindowShouldDragOnGesture -bool true
 
-    # Disable the “Are you sure you want to open this application?” dialog
-    # defaults write com.apple.LaunchServices LSQuarantine -bool false
-
     # Show the ~/Library folder
     chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
 
