@@ -113,7 +113,7 @@ fi
 # Install oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "Installing oh-my-zsh..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
 # Install uv
