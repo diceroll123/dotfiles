@@ -129,6 +129,7 @@ if ! command -v uv &>/dev/null; then
 fi
 
 # Install Homebrew
+export PATH="/opt/homebrew/bin/:$PATH"
 if ! command -v brew &>/dev/null; then
     echo "Homebrew not found. Installing..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
