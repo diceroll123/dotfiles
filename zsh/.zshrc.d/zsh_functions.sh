@@ -10,16 +10,6 @@ mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
-# `o` with no arguments opens the current directory, otherwise opens the given
-# location
-function o() {
-	if [ $# -eq 0 ]; then
-		open .;
-	else
-		open "$@";
-	fi;
-}
-
 # Script to find every single file and opens in neovim
 # alias set as zz in .zshrc
 search_with_zoxide() {
