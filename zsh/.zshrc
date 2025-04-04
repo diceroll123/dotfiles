@@ -44,7 +44,7 @@ source_recursively() {
 # source zsh files in .zshrc.d
 source_recursively "$HOME/.zshrc.d/" "*.sh"
 # source private zsh files in dotfiles
-source_recursively "$HOME/dotfiles/personal" "zsh_*.sh"
+source_recursively "$DOTFILES/personal" "zsh_*.sh"
 
 # brew installations activation
 source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
