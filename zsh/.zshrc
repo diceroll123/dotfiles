@@ -1,5 +1,7 @@
 unsetopt PROMPT_SP
 
+[[ -n "$SSH_CONNECTION" ]] && export TERM=xterm-256color
+
 # General variables
 export VISUAL="nvim"
 export EDITOR="nvim"
