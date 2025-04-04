@@ -46,7 +46,7 @@ function y() {
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
 		builtin cd -- "$cwd"
 	fi
-	rm -f -- "$tmp"
+	/bin/rm -f -- "$tmp"
 }
 
 function lg() {
@@ -56,7 +56,7 @@ function lg() {
 
     if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
         cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
-        rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+        /bin/rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
     fi
 }
 
