@@ -30,6 +30,7 @@ plugins=(
   starship
   zoxide
 )
+DISABLE_AUTO_UPDATE=true
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # Atuin
