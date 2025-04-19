@@ -145,6 +145,7 @@ brew install noahgorstein/tap/jqp
 ## Formulae
 echo "Installing Brew Formulae..."
 # {
+brew install act
 brew install atuin
 brew install awscli
 brew install bash-language-server
