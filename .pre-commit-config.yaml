@@ -8,7 +8,7 @@ repos:
       - id: check-yaml
 
   - repo: https://github.com/shssoichiro/oxipng
-    rev: v9.1.4
+    rev: v9.1.5
     hooks:
       - id: oxipng
         args: ["-o", "4", "--strip", "safe", "--alpha"]
@@ -19,7 +19,7 @@ repos:
   #     - id: stylua-github
 
   - repo: https://gitlab.com/vojko.pribudic.foss/pre-commit-update
-    rev: v0.6.1
+    rev: v0.7.0
     hooks:
       - id: pre-commit-update
         args: []
