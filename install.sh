@@ -179,6 +179,7 @@ brew install pngquant
 brew install poppler
 brew install pre-commit
 brew install pyright
+brew install retry
 brew install rich-cli
 brew install ripgrep
 brew install ruff
