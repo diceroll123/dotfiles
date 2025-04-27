@@ -193,7 +193,6 @@ brew install tectonic
 brew install tlrc
 brew install tmux
 brew install tokei
-is_macos && brew install trash
 brew install tree
 brew install tree-sitter
 brew install watch
