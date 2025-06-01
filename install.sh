@@ -164,6 +164,7 @@ brew install gh
 is_macos && brew install ghostty
 brew install halp
 brew install jq
+brew install kondo
 brew install lazydocker
 brew install lazygit
 brew install lolcat
