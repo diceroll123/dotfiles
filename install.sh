@@ -158,6 +158,7 @@ brew install cmatrix
 brew install coreutils
 brew install delta
 brew install entr
+brew install exiftool
 brew install eza
 brew install fd
 brew install fzf
