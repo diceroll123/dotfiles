@@ -145,6 +145,7 @@ brew install noahgorstein/tap/jqp
 ## Formulae
 echo "Installing Brew Formulae..."
 # {
+brew install 1password-cli
 brew install act
 brew install aria2
 brew install atuin
@@ -166,6 +167,7 @@ brew install gh
 is_macos && brew install ghostty
 brew install halp
 brew install jq
+brew install just
 brew install kondo
 brew install lazydocker
 brew install lazygit
