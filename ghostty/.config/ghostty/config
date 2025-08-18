@@ -12,7 +12,7 @@ selection-invert-fg-bg = true
 shell-integration = zsh
 shell-integration-features = no-cursor
 
-macos-titlebar-style = hidden
+# macos-titlebar-style = hidden
 macos-option-as-alt = true
 
 confirm-close-surface = false
