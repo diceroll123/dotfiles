@@ -21,6 +21,7 @@ alias mkdir='mkdir -p'
 alias pcr="pre-commit run --all-files"
 alias n="nvim"
 alias weather="curl wttr.in"
+alias fm="fzf-make"
 
 # if trash is not installed, make an alias for it
 if ! command -v trash &>/dev/null; then

@@ -163,6 +163,7 @@ brew install exiftool
 brew install eza
 brew install fd
 brew install fzf
+brew install fzf-make
 brew install gh
 is_macos && brew install ghostty
 brew install halp
