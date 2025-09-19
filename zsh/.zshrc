@@ -1,4 +1,5 @@
-unsetopt PROMPT_SP
+setopt prompt_cr prompt_sp
+PROMPT_EOL_MARK=
 
 [[ -n "$SSH_CONNECTION" ]] && export TERM=xterm-256color
 
@@ -20,6 +21,7 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 export XDG_DATA_DIRS="$HOMEBREW_PREFIX/share:$XDG_DATA_DIRS"
 . "$HOME/.cargo/env"
 
+fpath=($HOME/.docker/completions $fpath)
 autoload -U +X compinit && compinit
 
 # oh-my-zsh
