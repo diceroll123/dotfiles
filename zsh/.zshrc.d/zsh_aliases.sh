@@ -16,11 +16,9 @@ alias dots="cd $HOME/dotfiles && nvim"
 alias nv="nvim"
 alias fucking="sudo"
 alias please="sudo"
-alias cdg="cd $HOME/Documents/Github"
 alias mkdir='mkdir -p'
 alias pcr="pre-commit run --all-files"
 alias n="nvim"
-alias weather="curl wttr.in"
 alias fm="fzf-make"
 
 # if trash is not installed, make an alias for it
