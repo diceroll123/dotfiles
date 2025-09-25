@@ -31,6 +31,8 @@ split-divider-color = "#c6d0f5"
 
 auto-update = check
 
+quick-terminal-size = 30%,90%
+
 keybind = global:ctrl+space=toggle_quick_terminal
 keybind = ctrl+tab=goto_split:next
 keybind = ctrl+shift+tab=goto_split:previous
