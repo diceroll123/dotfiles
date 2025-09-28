@@ -9,6 +9,7 @@
 	editor = nvim
 	autcrlf = input
 	excludesfile = ~/.gitignore_global
+	hooksPath = ~/dotfiles/personal/git-hooks
 [alias]
 	a = add
 	aa = add -A
