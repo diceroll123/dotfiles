@@ -216,6 +216,7 @@ echo "Installing Brew Casks..."
 # {
 is_macos && brew install --cask 1password
 is_macos && brew install --cask docker
+is_macos && brew install --cask amir20/homebrew-dtop/dtop
 is_macos && brew install --cask firefox
 brew install --cask font-hack-nerd-font
 brew install --cask font-jetbrains-mono-nerd-font
