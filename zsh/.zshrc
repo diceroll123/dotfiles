@@ -54,3 +54,4 @@ source_recursively "$DOTFILES/personal" "zsh_*.sh"
 # brew installations activation
 source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+export PATH="$HOME/.cargo/bin:$PATH"
