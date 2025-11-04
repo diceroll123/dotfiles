@@ -21,13 +21,6 @@ alias pcr="pre-commit run --all-files"
 alias n="nvim"
 alias fm="fzf-make"
 
-# if trash is not installed, make an alias for it
-if ! command -v trash &>/dev/null; then
-  alias trash="/bin/rm"
-else
-  alias rm="trash"
-fi
-
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
