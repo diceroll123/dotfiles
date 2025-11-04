@@ -19,19 +19,15 @@ gui:
       - "#89b4fa" # Blue
     unstagedChangesColor:
       - red # Red
-
   nerdFontsVersion: "3"
 git:
   log:
     order: date-order
     showWholeGraph: true
-
-  paging:
-    colorArg: always
-    pager: delta --no-gitconfig --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" --keep-plus-minus-markers
-
+  pagers:
+    - colorArg: always
+      pager: delta --no-gitconfig --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}" --keep-plus-minus-markers
   skipHookPrefix: wip
-
 customCommands:
   - key: "G"
     command: |
@@ -48,9 +44,9 @@ customCommands:
   - key: "<c-c>"
     command: |
       /bin/zsh -i -c force_commit
-    subprocess: true
     context: "files"
     description: "Commit staged changes, with generic update message"
+    output: terminal
   - key: "b"
     command: "git branch --merged master | grep -v '^[ *]*master$' | xargs -r git branch -d"
     context: "localBranches"
