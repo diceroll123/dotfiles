@@ -12,6 +12,7 @@ export GH_PAGER=""
 # Workspace variables
 export DOTFILES="$HOME/dotfiles"
 export PATH="/opt/homebrew/bin/:$PATH"
+export PATH="$HOME/.rd/bin/:$PATH"
 
 eval "$(brew shellenv)"
 
