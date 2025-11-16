@@ -54,6 +54,7 @@
   "stopinsert.nvim": { "branch": "main", "commit": "5897687e9cf038d993f413ce984a0d2c46bd6e18" },
   "telescope.nvim": { "branch": "master", "commit": "3a12a853ebf21ec1cce9a92290e3013f8ae75f02" },
   "tiny-code-action.nvim": { "branch": "main", "commit": "b6c9ee6444196c1ca616bf4ff381124b140db21f" },
+  "tiny-glimmer.nvim": { "branch": "main", "commit": "73b17b8a41ac7a61bfdcbe1cd3743c29d28d376e" },
   "todo-comments.nvim": { "branch": "main", "commit": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668" },
   "venv-selector.nvim": { "branch": "regexp", "commit": "e82594274bf7b54387f9a2abe65f74909ac66e97" },
   "vim-camelsnek": { "branch": "master", "commit": "84b363aa42b5bc3a2314a56d242df20e7bbfcbf3" },
