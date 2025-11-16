@@ -48,7 +48,7 @@ M.capabilities.textDocument.completion.completionItem = {
 }
 
 M.defaults = function()
-  require("lspconfig").lua_ls.setup {
+  vim.lsp.config("lua_ls", {
     on_attach = M.on_attach,
     capabilities = M.capabilities,
     on_init = M.on_init,
@@ -70,7 +70,7 @@ M.defaults = function()
         },
       },
     },
-  }
+  })
 end
 
 return M

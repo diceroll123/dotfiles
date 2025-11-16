@@ -1,8 +1,7 @@
 return {
-  "neovim/nvim-lspconfig",
+  "b0o/schemastore.nvim",
   event = "VeryLazy",
   dependencies = {
-    "b0o/schemastore.nvim",
     { "williamboman/mason.nvim", event = "VeryLazy" }, -- Optional
     { "hrsh7th/cmp-calc", event = "VeryLazy" },
     { "nvimtools/none-ls.nvim", event = "VeryLazy" },
@@ -23,7 +22,6 @@ return {
     },
   },
   config = function(_, opts)
-    require("lspconfig.ui.windows").default_options.border = "single"
     require("plugins.lsp.lspconfig").defaults()
 
     vim.diagnostic.config {
@@ -69,22 +67,21 @@ return {
 
     local on_init = require("plugins.lsp.lspconfig").on_init
     local lsp_servers = require "plugins.lsp.servers"
-    local lspconfig = require "lspconfig"
 
     for server, config in pairs(lsp_servers) do
       if config.enabled ~= false then
-        lspconfig[server].setup {
+        vim.lsp.config(server, {
           capabilities = capabilities,
           on_attach = on_attach,
           on_init = on_init,
           settings = vim.tbl_deep_extend("force", config.settings or {}, opts),
           filetypes = config.filetypes,
-        }
+        })
       end
     end
 
     -- Add ruff specific configuration
-    lspconfig.ruff.setup {
+    vim.lsp.config("ruff", {
       on_attach = function(client, bufnr)
         -- Disable hover in favor of Pyright
         if client.name == "ruff" then
@@ -99,10 +96,10 @@ return {
           -- Add any specific settings for ruff here
         },
       }, opts),
-    }
+    })
 
     -- Add rust_analyzer specific configuration
-    lspconfig.rust_analyzer.setup {
+    vim.lsp.config("rust_analyzer", {
       on_attach = on_attach,
       on_init = on_init,
       capabilities = capabilities,
@@ -111,7 +108,7 @@ return {
           -- Add any specific settings for rust_analyzer here
         },
       }, opts),
-    }
+    })
 
     local cmp = require "cmp"
 
