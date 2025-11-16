@@ -5,6 +5,7 @@ return {
     html = { "prettier" },
     python = { "ruff_format", "ruff_fix", "ruff_organize_imports" },
     rust = { "rustfmt" },
+    markdown = { "prettier" },
     javascript = { "prettier" },
     javascriptscript = { "prettier" },
     typescript = { "prettier" },
