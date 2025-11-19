@@ -166,6 +166,7 @@ brew install fzf
 brew install fzf-make
 brew install gh
 is_macos && brew install ghostty
+brew install gum
 brew install halp
 brew install jq
 brew install just
@@ -214,17 +215,19 @@ brew install zsh-syntax-highlighting
 ## Casks
 echo "Installing Brew Casks..."
 # {
-is_macos && brew install --cask 1password
-is_macos && brew install --cask docker
-is_macos && brew install --cask amir20/homebrew-dtop/dtop
-is_macos && brew install --cask firefox
 brew install --cask font-hack-nerd-font
 brew install --cask font-jetbrains-mono-nerd-font
+is_macos && brew install --cask 1password
+is_macos && brew install --cask amir20/homebrew-dtop/dtop
+is_macos && brew install --cask firefox
 is_macos && brew install --cask font-sf-pro
 is_macos && brew install --cask github
 is_macos && brew install --cask google-chrome
 is_macos && brew install --cask obsidian
+is_macos && brew install --cask rancher
 is_macos && brew install --cask raycast
+is_macos && brew install --cask stats
+is_macos && brew install --cask svu
 is_macos && brew install --cask sublime-text
 is_macos && brew install --cask visual-studio-code
 # }
@@ -241,6 +244,7 @@ brew cleanup
 
 ## Github CLI extensions
 if gh auth status &>/dev/null; then
+    gh extension install dlvhdr/gh-dash
     gh extension install github/gh-copilot
     gh extension install meiji163/gh-notify
 else
