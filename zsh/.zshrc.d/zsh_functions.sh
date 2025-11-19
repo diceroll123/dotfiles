@@ -40,7 +40,7 @@ search_with_zoxide() {
     fi
 }
 
-function y() {
+y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -49,7 +49,7 @@ function y() {
 	/bin/rm -f -- "$tmp"
 }
 
-function lg() {
+lg() {
     export LAZYGIT_NEW_DIR_FILE=$(mktemp)
 
     lazygit "$@"
@@ -61,10 +61,10 @@ function lg() {
 }
 
 # Colormap
-function colormap() {
+colormap() {
     for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 }
 
-function mp4fix() {
+mp4fix() {
     for f in *.mp4.part; do ffmpeg -i "$f" -c copy "${f%.part}" -y && rm "$f"; done
 }

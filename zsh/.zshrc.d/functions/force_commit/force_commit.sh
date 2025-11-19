@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function force_commit() {
+force_commit() {
     # For when I don't want to think about, or write commit messages.
     # Automatically stages all changes and commits if anything is not staged.
     script_dir="$(cd "$(dirname "${(%):-%x}")" && pwd)"

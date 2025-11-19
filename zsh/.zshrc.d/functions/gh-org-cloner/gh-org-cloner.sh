@@ -4,7 +4,7 @@
 # - gh (GitHub CLI)
 # - fzf (Fuzzy Finder)
 # - bat (A better cat)
-function select_org() {
+select_org() {
   # Get all organizations, sort them, and pick one with fzf
   ORG=$(gh api user/memberships/orgs --paginate --jq '.[] | .organization.login' |
     sort |
@@ -16,7 +16,7 @@ function select_org() {
   echo "$ORG"
 }
 
-function select_repos() {
+select_repos() {
   local ORG=$1
   # Fetch all repositories for the selected organization, sort, and pick with fzf (supports multiple selection, using TAB)
   REPOS=$(gh api orgs/"$ORG"/repos --paginate --jq '.[] | .name' |
@@ -41,7 +41,7 @@ function select_repos() {
   echo "$REPOS_WITH_ORG"
 }
 
-function gh_org_cloner() {
+gh_org_cloner() {
   local ORG=$(select_org) || return 1
   local REPOS=$(select_repos "$ORG") || return 1
   echo "Cloning selected repositories..."

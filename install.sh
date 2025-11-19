@@ -18,7 +18,7 @@ keep_sudo_alive
 trap 'kill "$sudo_pid" 2>/dev/null' EXIT
 
 # Set variable for macOS detection
-function is_macos() {
+is_macos() {
     [[ "$OSTYPE" == darwin* ]]
 }
 
