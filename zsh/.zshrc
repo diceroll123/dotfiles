@@ -24,7 +24,14 @@ export XDG_DATA_DIRS="$HOMEBREW_PREFIX/share:$XDG_DATA_DIRS"
 . "$HOME/.cargo/env"
 
 fpath=($HOME/.docker/completions $fpath)
-autoload -U +X compinit && compinit
+
+# Cache compinit for faster startup (rebuilds once per day)
+autoload -U +X compinit
+if [[ -n ${HOME}/.zcompdump(#qNmh+24) ]]; then
+  compinit -i
+else
+  compinit -C -i
+fi
 
 # Plugin initialization
 eval "$(fzf --zsh)"
