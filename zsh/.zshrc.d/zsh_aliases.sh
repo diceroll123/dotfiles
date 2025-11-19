@@ -20,6 +20,7 @@ alias mkdir='mkdir -p'
 alias pcr="pre-commit run --all-files"
 alias n="nvim"
 alias fm="fzf-make"
+alias gtn='git tag $(svu next)'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
