@@ -13,6 +13,7 @@ export GH_PAGER=""
 export DOTFILES="$HOME/dotfiles"
 export PATH="/opt/homebrew/bin/:$PATH"
 export PATH="$HOME/.rd/bin/:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(brew shellenv)"
 
@@ -25,19 +26,12 @@ export XDG_DATA_DIRS="$HOMEBREW_PREFIX/share:$XDG_DATA_DIRS"
 fpath=($HOME/.docker/completions $fpath)
 autoload -U +X compinit && compinit
 
-# oh-my-zsh
-plugins=(
-  fzf
-  gh
-  git
-  starship
-  zoxide
-)
-DISABLE_AUTO_UPDATE=true
-source $HOME/.oh-my-zsh/oh-my-zsh.sh
-
-# Atuin
+# Plugin initialization
+eval "$(fzf --zsh)"
+eval "$(gh completion -s zsh)"
+eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
+eval "$(starship init zsh)"
 
 source_recursively() {
   local file_path="$1"
@@ -55,4 +49,3 @@ source_recursively "$DOTFILES/personal" "zsh_*.sh"
 # brew installations activation
 source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-export PATH="$HOME/.cargo/bin:$PATH"
