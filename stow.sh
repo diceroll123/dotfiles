@@ -3,7 +3,7 @@
 # Delete any and all .DS_Store files recursively
 find . -name ".DS_Store" -delete
 
-STOW_FOLDERS="atuin,bat,eza,ghostty,git,lazygit,nvim,starship,tmux,yazi,zsh"
+STOW_FOLDERS="atuin,bat,btop,eza,ghostty,git,lazygit,nvim,starship,tmux,yazi,zsh"
 
 # back up any existing .zsh* files
 if [ -f ~/.zshrc ]; then
