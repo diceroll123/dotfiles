@@ -8,6 +8,7 @@ format = """
 [](bg0)\
 $os\
 $username\
+$hostname\
 [](fg:bg0 bg:bg1)\
 $directory\
 [](fg:bg1 bg:bg2)\
@@ -48,6 +49,11 @@ style_user = "bg:bg0 fg:text"
 style_root = "bg:bg0 fg:text"
 # symbol = "󰀄"
 format = '[$user ]($style)'
+
+[hostname]
+disabled = false
+ssh_only = true
+style = "bg:bg0 fg:red"
 
 [os]
 disabled = false
