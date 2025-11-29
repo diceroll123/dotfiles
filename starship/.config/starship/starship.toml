@@ -53,7 +53,8 @@ format = '[$user ]($style)'
 [hostname]
 disabled = false
 ssh_only = true
-style = "bg:bg0 fg:red"
+style = "bg:bg0 fg:text"
+format = '[$ssh_symbol$hostname in ]($style)'
 
 [os]
 disabled = false
