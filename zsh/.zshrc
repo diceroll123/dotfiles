@@ -19,8 +19,7 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 # ============================================================================
 # Path Configuration
 # ============================================================================
-export PATH="/opt/homebrew/bin/:$PATH"
-export PATH="$HOME/.rd/bin/:$PATH"
+export PATH="$HOME/.rd/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 eval "$(brew shellenv)"
 export XDG_DATA_DIRS="$HOMEBREW_PREFIX/share:$XDG_DATA_DIRS"
