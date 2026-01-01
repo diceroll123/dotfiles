@@ -185,6 +185,7 @@ brew install parallel
 brew install pngquant
 brew install poppler
 brew install pre-commit
+brew install prek
 brew install pyright
 brew install retry
 brew install rich-cli
