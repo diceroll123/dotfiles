@@ -164,6 +164,7 @@ brew install eza
 brew install fd
 brew install fzf
 brew install fzf-make
+brew install git-lfs
 brew install gh
 is_macos && brew install ghostty
 brew install gum
