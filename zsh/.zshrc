@@ -28,38 +28,12 @@ export XDG_DATA_DIRS="$HOMEBREW_PREFIX/share:$XDG_DATA_DIRS"
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
 # ============================================================================
-# Completions (lazy-loaded on first tab)
-# ============================================================================
-fpath=($HOME/.docker/completions $fpath)
-
-autoload -Uz compinit
-_lazy_compinit() {
-  # Initialize completion once, then restore Tab to normal completion.
-  compinit -C
-  bindkey '^I' expand-or-complete
-  zle expand-or-complete
-}
-
-# Only define/bind widgets for interactive shells.
-if [[ -o interactive ]]; then
-  zle -N _lazy_compinit
-  bindkey '^I' _lazy_compinit  # Tab triggers lazy load
-fi
-
-# ============================================================================
 # Plugins & Tools
 # ============================================================================
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
 eval "$(starship init zsh)"
-
-# Lazy-load gh completions (on first gh<Tab>)
-gh() {
-  unfunction gh
-  eval "$(command gh completion -s zsh)"
-  command gh "$@"
-}
 
 source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
