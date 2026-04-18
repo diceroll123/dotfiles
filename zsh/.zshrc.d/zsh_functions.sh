@@ -66,5 +66,32 @@ colormap() {
 }
 
 mp4fix() {
-    for f in *.mp4.part; do ffmpeg -i "$f" -c copy "${f%.part}" -y && rm "$f"; done
+    local target="$1"
+    local files=()
+    local f
+
+    if [ -z "$target" ]; then
+        files=( *.mp4.part )
+    elif [ -d "$target" ]; then
+        files=( "$target"/*.mp4.part )
+    elif [ -f "$target" ]; then
+        if [[ "$target" != *.mp4.part ]]; then
+            echo "mp4fix: file must end with .mp4.part" >&2
+            return 1
+        fi
+        files=( "$target" )
+    else
+        echo "mp4fix: '$target' is not a file or directory" >&2
+        return 1
+    fi
+
+    if [ "${#files[@]}" -eq 0 ] || [ ! -e "${files[1]}" ]; then
+        echo "mp4fix: no matching .mp4.part files found" >&2
+        return 1
+    fi
+
+    for f in "${files[@]}"; do
+        [ "${f##*.}" = "part" ] || continue
+        ffmpeg -i "$f" -c copy "${f%.part}" -y && rm "$f"
+    done
 }
