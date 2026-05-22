@@ -1,0 +1,34 @@
+[cache]
+duration_secs = 600
+
+[ui]
+tick_ms = 100
+repo_sort = "updated"
+repos_limit = 100
+prs_limit = 100
+prefetch_pr_details = true
+repo_columns = [
+  #  "stars",
+  #  "forks",
+  #  "issues",
+  #  "visibility",
+  #  "last_push",
+  "created",
+]
+
+[sources]
+include_self = true
+auto_fetch_orgs = true
+orgs = [
+  "astral-sh",
+  "rust-lang",
+]
+users = [
+  "BurntSushi",      # ripgrep, regex
+  "fasterthanlime",  # Rust writing
+  "orhun",           # ratatui, Rust TUI tools
+  "dlvhdr",          # gh-dash
+  "mitsuhiko",       # Flask, Ruff ecosystem
+  "charliermarsh",   # Ruff, uv
+  "Rapptz",          # discord.py
+]
