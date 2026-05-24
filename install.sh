@@ -235,6 +235,7 @@ is_macos && brew install --cask visual-studio-code
 
 ## Cargo installations
 # for when things are not available in Brew
+cargo install cargo-binstall
 cargo install repgrep
 
 ## NPM installations
