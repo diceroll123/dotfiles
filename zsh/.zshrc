@@ -20,6 +20,7 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 # Path Configuration
 # ============================================================================
 export PATH="$HOME/.rd/bin:$PATH"
+export PATH="$HOME/bins:$PATH"
 
 _zsh_cache="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/evals"
 [[ -d "$_zsh_cache" ]] || mkdir -p "$_zsh_cache"
