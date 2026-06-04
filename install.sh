@@ -253,6 +253,9 @@ else
     echo "GitHub CLI not authenticated. Skipping gh extensions."
 fi
 
+# Create personal bins directory
+mkdir -p "$HOME/bins"
+
 # Stow new dotfiles using stow.sh
 echo "Stowing new dotfiles..."
 source ./stow.sh
