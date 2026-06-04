@@ -38,7 +38,6 @@ export XDG_DATA_DIRS="$HOMEBREW_PREFIX/share:$XDG_DATA_DIRS"
 # Plugins & Tools
 # ============================================================================
 _eval_cached fzf "fzf --zsh"
-_eval_cached zoxide "zoxide init zsh"
 _eval_cached atuin "atuin init zsh"
 _eval_cached starship "starship init zsh"
 unset -f _eval_cached
@@ -58,3 +57,5 @@ source_recursively() {
 # Source user configurations
 source_recursively "$HOME/.zshrc.d/" "*.sh"
 source_recursively "$DOTFILES/personal" "zsh_*.sh"
+
+eval "$(zoxide init zsh)"
