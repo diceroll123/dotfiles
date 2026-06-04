@@ -24,4 +24,8 @@ for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g"); do
     stow --target=$HOME -R $folder
 done
 
+if [ -f "$DOTFILES/personal/stow.sh" ]; then
+    bash "$DOTFILES/personal/stow.sh"
+fi
+
 ./post-stow.sh
