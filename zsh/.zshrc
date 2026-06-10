@@ -20,20 +20,27 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 # Path Configuration
 # ============================================================================
 export PATH="$HOME/.rd/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-eval "$(/opt/homebrew/bin/brew shellenv)"
-export XDG_DATA_DIRS="$HOMEBREW_PREFIX/share:$XDG_DATA_DIRS"
 
-# Cargo (only if .cargo/env exists)
-[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
+_zsh_cache="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/evals"
+[[ -d "$_zsh_cache" ]] || mkdir -p "$_zsh_cache"
+_eval_cached() {
+  local name="$1" cmd="$2" bin="${3:-$(command -v ${1%%-*} 2>/dev/null)}"
+  local cache="$_zsh_cache/$name"
+  [[ ! -f "$cache" || ( -n "$bin" && "$bin" -nt "$cache" ) ]] && eval "$cmd" >| "$cache"
+  source "$cache"
+}
+_eval_cached brew-shellenv "/opt/homebrew/bin/brew shellenv" /opt/homebrew/bin/brew
+export PATH="$HOME/.cargo/bin:$PATH"
+export XDG_DATA_DIRS="$HOMEBREW_PREFIX/share:$XDG_DATA_DIRS"
 
 # ============================================================================
 # Plugins & Tools
 # ============================================================================
-eval "$(fzf --zsh)"
-eval "$(zoxide init zsh)"
-eval "$(atuin init zsh)"
-eval "$(starship init zsh)"
+_eval_cached fzf "fzf --zsh"
+_eval_cached zoxide "zoxide init zsh"
+_eval_cached atuin "atuin init zsh"
+_eval_cached starship "starship init zsh"
+unset -f _eval_cached
 
 source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
