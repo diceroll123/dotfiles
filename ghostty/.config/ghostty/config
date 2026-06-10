@@ -1,10 +1,11 @@
 # 👻
 
-theme = Ayu Mirage
+theme = Ayu
 
 font-family = "Comic Code Ligatures"
 font-feature = "-liga"
 font-size = 20
+term = xterm-256color
 cursor-style = block
 cursor-style-blink = false
 cursor-invert-fg-bg = true
@@ -26,6 +27,7 @@ window-width = 80
 link-url = true
 scrollback-limit = 10000
 window-step-resize = true
+mouse-hide-while-typing = true
 
 split-divider-color = "#c6d0f5"
 
