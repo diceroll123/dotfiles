@@ -49,11 +49,9 @@ source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 # Additional Configurations
 # ============================================================================
 source_recursively() {
-  local file_path="$1"
-  local name_pattern="$2"
-  if [ -d "$file_path" ]; then
-    while read -r f; do source "$f"; done < <(find "$file_path" -name "$name_pattern" | sort)
-  fi
+  local file_path="$1" name_pattern="$2" f
+  [[ -d "$file_path" ]] || return
+  for f in "$file_path"/**/$~name_pattern(N.on); do source "$f"; done
 }
 
 # Source user configurations
