@@ -2,7 +2,6 @@ alias zshconfig="nvim $HOME/.zshrc"
 alias zshrc="nvim $HOME/.zshrc"
 alias rc="nvim $HOME/.zshrc"
 alias rl=". $HOME/.zshrc"
-alias cd="z"
 alias zz="search_with_zoxide"
 alias fdh="fd -H"
 alias vim="nvim"
@@ -23,6 +22,7 @@ alias fm="fzf-make"
 alias gtn='git tag $(svu next)'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
+cd() { [[ $- == *i* ]] && z "$@" || builtin cd "$@" }
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
