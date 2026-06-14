@@ -5,15 +5,18 @@ find . -name ".DS_Store" -delete
 
 STOW_FOLDERS="atuin,bat,btop,eza,ghview,ghostty,git,lazygit,nvim,starship,tmux,yazi,zsh"
 
-# back up any existing .zsh* files
-if [ -f ~/.zshrc ]; then
-    echo "Backing up existing .zshrc to .zshrc.bak"
-    mv ~/.zshrc ~/.zshrc.bak
-fi
-if [ -f ~/.zshenv ]; then
-    echo "Backing up existing .zshenv to .zshenv.bak"
-    mv ~/.zshenv ~/.zshenv.bak
-fi
+backup_if_different() {
+    local src="$1" dest="$2"
+    [ -f "$dest" ] || return
+    if ! diff -q "$src" "$dest" &>/dev/null; then
+        echo "Backing up existing $(basename "$dest") to $(basename "$dest").bak"
+        mv "$dest" "${dest}.bak"
+    fi
+}
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+backup_if_different "$SCRIPT_DIR/zsh/.zshrc"  ~/.zshrc
+backup_if_different "$SCRIPT_DIR/zsh/.zshenv" ~/.zshenv
 if [ -f ~/.zprofile ]; then
     echo "Backing up existing .zprofile to .zprofile.bak"
     mv ~/.zprofile ~/.zprofile.bak
