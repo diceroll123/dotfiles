@@ -4,6 +4,8 @@ tap "noahgorstein/tap"
 tap "yannjor/krabby"
 # Run your GitHub Actions locally
 brew "act"
+# Static checker for GitHub Actions workflow files
+brew "actionlint"
 # C library implementing the SSH2 protocol
 brew "libssh2"
 # Download with resuming and segmented downloading
