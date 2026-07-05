@@ -58,6 +58,8 @@ brew "gum"
 brew "halp"
 # Open-source video transcoder available for Linux, Mac, and Windows
 brew "handbrake"
+# Agent multiplexer that lives in your terminal
+brew "herdr"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Tools and libraries to manipulate images in select formats
@@ -164,8 +166,6 @@ brew "zsh-syntax-highlighting"
 cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
-# Terminal-based AI coding assistant
-cask "claude-code"
 # Server and cloud storage browser
 cask "cyberduck"
 # Voice and text chat software
