@@ -30,8 +30,6 @@ brew "cbonsai"
 brew "cmatrix"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# OpenAI's coding agent that runs in your terminal
-brew "codex"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Select default apps for documents and URL schemes on macOS
@@ -274,7 +272,6 @@ vscode "yoavbls.pretty-ts-errors"
 cargo "cargo-llvm-cov"
 cargo "cargo-nextest"
 cargo "flamegraph"
-cargo "mprocs"
 cargo "prek"
 cargo "repgrep"
 cargo "samply"
