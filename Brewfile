@@ -75,7 +75,7 @@ brew "kondo"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Simple terminal UI for git commands
-brew "lazygit", link: false
+brew "lazygit"
 # Rainbows and unicorns in your console!
 brew "lolcat"
 # Language Server for the Lua language
