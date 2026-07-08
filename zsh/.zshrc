@@ -11,6 +11,7 @@ PROMPT_EOL_MARK=
 # ============================================================================
 export VISUAL="nvim"
 export EDITOR="nvim"
+bindkey -e  # force emacs keymap; zsh else infers vi-mode from "nvim" containing "vi"
 export XDG_CONFIG_HOME="$HOME/.config"
 export GH_PAGER=""
 export DOTFILES="$HOME/dotfiles"
