@@ -66,32 +66,34 @@ colormap() {
 }
 
 mp4fix() {
-    local target="$1"
     local files=()
     local f
 
-    if [ -z "$target" ]; then
+    if [ $# -eq 0 ]; then
         files=( *.mp4.part )
-    elif [ -d "$target" ]; then
-        files=( "$target"/*.mp4.part )
-    elif [ -f "$target" ]; then
-        if [[ "$target" != *.mp4.part ]]; then
-            echo "mp4fix: file must end with .mp4.part" >&2
-            return 1
-        fi
-        files=( "$target" )
     else
-        echo "mp4fix: '$target' is not a file or directory" >&2
-        return 1
+        files=( "$@" )
     fi
 
     if [ "${#files[@]}" -eq 0 ] || [ ! -e "${files[1]}" ]; then
-        echo "mp4fix: no matching .mp4.part files found" >&2
+        echo "mp4fix: no matching files found" >&2
         return 1
     fi
 
     for f in "${files[@]}"; do
-        [ "${f##*.}" = "part" ] || continue
-        ffmpeg -i "$f" -c copy "${f%.part}" -y && rm "$f"
+        [ -f "$f" ] || { echo "mp4fix: '$f' is not a file, skipping" >&2; continue; }
+        case "$f" in
+            *.mp4.part)
+                ffmpeg -i "$f" -c copy "${f%.part}" -y && rm "$f"
+                ;;
+            *.mp4)
+                local tmp
+                tmp="$(mktemp "${f%.mp4}.XXXXXX.mp4")"
+                ffmpeg -i "$f" -c copy "$tmp" -y && mv "$tmp" "$f"
+                ;;
+            *)
+                echo "mp4fix: '$f' is not an .mp4 or .mp4.part file, skipping" >&2
+                ;;
+        esac
     done
 }
