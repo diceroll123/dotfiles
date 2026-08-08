@@ -12,8 +12,8 @@ repo_columns = [
   #  "forks",
   #  "issues",
   #  "visibility",
-  #  "last_push",
-  "created",
+  "last_push",
+  #  "created",
 ]
 
 [sources]
