@@ -60,3 +60,10 @@ source_recursively "$HOME/.zshrc.d/" "*.sh"
 source_recursively "$DOTFILES/personal" "zsh_*.sh"
 
 eval "$(zoxide init zsh)"
+
+# bun completions
+[ -s "/Users/steve/.bun/_bun" ] && source "/Users/steve/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
