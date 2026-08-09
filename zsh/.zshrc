@@ -4,6 +4,16 @@
 setopt prompt_cr prompt_sp
 PROMPT_EOL_MARK=
 
+# Some programs (nvim, atuin's Ctrl-R search, fzf, etc.) enable xterm mouse-tracking
+# and bracketed-paste modes and are expected to disable them on exit. If a session
+# dies uncleanly (e.g. SSH connection drops), that disable sequence never arrives and
+# the terminal is left reading mouse movement as garbage input. Reset those modes
+# before every prompt so the shell self-heals as soon as control returns to it.
+_reset_terminal_modes() {
+    printf '\e[?1000l\e[?1002l\e[?1003l\e[?1005l\e[?1006l\e[?1015l\e[?2004l'
+}
+precmd_functions+=(_reset_terminal_modes)
+
 [[ -n "$SSH_CONNECTION" ]] && export TERM=xterm-256color
 
 # ============================================================================
