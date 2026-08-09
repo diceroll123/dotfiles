@@ -72,7 +72,7 @@ source_recursively "$DOTFILES/personal" "zsh_*.sh"
 eval "$(zoxide init zsh)"
 
 # bun completions
-[ -s "/Users/steve/.bun/_bun" ] && source "/Users/steve/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
