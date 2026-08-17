@@ -10,8 +10,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require "utils.hjkl-notifier"
-
 local lazy_config = require "configs.lazy"
 
 -- load plugins
