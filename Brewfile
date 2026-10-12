@@ -112,6 +112,8 @@ brew "nmap"
 brew "onefetch"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# AI coding agent, built for the terminal
+brew "opencode"
 # Shell command parallelization utility
 brew "parallel"
 # PNG image optimizing utility
