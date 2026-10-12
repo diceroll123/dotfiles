@@ -1,0 +1,6 @@
+# Only installed on the "studio" Mac (see install.sh)
+brew "ollama"
+uv "huggingface-hub"
+uv "litellm[proxy]"
+uv "mlx-lm", source: "git+https://github.com/chandukona/mlx-lm@fix-tokenizer-quotes"
+uv "vllm-mlx", source: "git+ssh://git@github.com/diceroll123/vllm-mlx.git@patched-v0.4.0"
