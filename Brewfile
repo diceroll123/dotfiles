@@ -42,6 +42,8 @@ brew "entr"
 brew "exiftool"
 # Modern, maintained replacement for ls
 brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
@@ -100,8 +102,6 @@ brew "make"
 brew "mas"
 # NCurses Disk Usage
 brew "ncdu"
-# Fast, highly customisable system info script
-brew "neofetch"
 # Incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
