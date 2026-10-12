@@ -134,7 +134,7 @@ brew analytics off
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 ## Homebrew packages
-# Note: regenerate Brewfile with `brew bundle dump --force`
+# Note: regenerate Brewfile with `just brew-dump`
 echo "Installing Brew packages..."
 brew bundle --file="$(dirname "$0")/Brewfile"
 
