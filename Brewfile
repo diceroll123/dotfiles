@@ -36,8 +36,6 @@ brew "cmatrix"
 brew "coreutils"
 # TIFF library and utilities
 brew "libtiff"
-# Select default apps for documents and URL schemes on macOS
-brew "duti"
 # Run arbitrary commands when files change
 brew "entr"
 # Perl lib for reading and writing EXIF metadata
