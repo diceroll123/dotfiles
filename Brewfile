@@ -229,8 +229,6 @@ cask "visual-studio-code"
 cask "vlc"
 # Menu bar toolkit with keep-awake, system monitor and volume mixer
 cask "vorssaint"
-mas "HazeOver", id: 430798174
-mas "Numbers", id: 409203825
 vscode "anthropic.claude-code"
 vscode "astral-sh.ty"
 vscode "asvetliakov.vscode-neovim"
