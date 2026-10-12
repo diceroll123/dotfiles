@@ -137,6 +137,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # Note: regenerate Brewfile with `just brew-dump`
 echo "Installing Brew packages..."
 brew bundle --file="$(dirname "$0")/Brewfile"
+if [ "$(scutil --get LocalHostName 2>/dev/null)" = "studio" ]; then
+    brew bundle --file="$(dirname "$0")/Brewfile.studio"
+fi
 
 echo "Running brew cleanup..."
 brew cleanup
