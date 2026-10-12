@@ -89,7 +89,7 @@ mp4fix() {
             *.mp4)
                 local tmp
                 tmp="$(mktemp "${f%.mp4}.XXXXXX.mp4")"
-                ffmpeg -i "$f" -c copy "$tmp" -y && mv "$tmp" "$f"
+                ffmpeg -i "$f" -c copy "$tmp" -y && touch -r "$f" "$tmp" && mv "$tmp" "$f"
                 ;;
             *)
                 echo "mp4fix: '$f' is not an .mp4 or .mp4.part file, skipping" >&2
