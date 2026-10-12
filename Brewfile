@@ -1,5 +1,4 @@
 tap "amir20/dtop"
-tap "caarlos0/tap"
 tap "lkrms/misc"
 tap "noahgorstein/tap"
 tap "oven-sh/bun"
