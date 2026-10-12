@@ -1,6 +1,8 @@
 tap "amir20/dtop"
+tap "caarlos0/tap"
 tap "lkrms/misc"
 tap "noahgorstein/tap"
+tap "oven-sh/bun"
 tap "yannjor/krabby"
 # Run your GitHub Actions locally
 brew "act"
@@ -26,12 +28,14 @@ brew "bat-extras"
 brew "btop"
 # Console Bonsai is a bonsai tree generator, written in C using ncurses
 brew "cbonsai"
+# CLI tool for Cloudflare Workers
+brew "cloudflare-wrangler"
 # Console Matrix
 brew "cmatrix"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# TIFF library and utilities
+brew "libtiff"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
 # Run arbitrary commands when files change
@@ -44,6 +48,10 @@ brew "eza"
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# Play, record, convert, and stream many audio and video codecs
+brew "ffmpeg-full"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Fuzzy finder with preview window for various command runners including make
@@ -52,6 +60,8 @@ brew "fzf-make"
 brew "gh"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Git extension for versioning large files
+brew "git-lfs"
 # Tool for glamorous shell scripts
 brew "gum"
 # CLI tool to get help with CLI tools
@@ -64,6 +74,8 @@ brew "herdr"
 brew "hyperfine"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# Utility to optimize JPEG files
+brew "jpegoptim"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # TUI playground to experiment and play with jq
@@ -76,6 +88,8 @@ brew "kondo"
 brew "lazydocker"
 # Simple terminal UI for git commands
 brew "lazygit"
+# Find what models run on your hardware
+brew "llmfit"
 # Rainbows and unicorns in your console!
 brew "lolcat"
 # Language Server for the Lua language
@@ -90,18 +104,24 @@ brew "mas"
 brew "ncdu"
 # Fast, highly customisable system info script
 brew "neofetch"
+# Incremental parsing library
+brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
 # Command-line Git information tool
 brew "onefetch"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Shell command parallelization utility
 brew "parallel"
 # PNG image optimizing utility
 brew "pngquant"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# Convert bitmaps to vector graphics
+brew "potrace"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Fast Git hook manager written in Rust, drop-in alternative to pre-commit
@@ -142,12 +162,14 @@ brew "transmission-cli"
 brew "trash"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Incremental parsing library
-brew "tree-sitter"
+# Extremely fast Python type checker, written in Rust
+brew "ty"
 # Executes a program periodically, showing output fullscreen
 brew "watch"
 # Internet file retriever
 brew "wget"
+# Library to create, extract, and modify Windows Imaging files
+brew "wimlib"
 # Copy terminal output to clipboard
 brew "yank"
 # Blazing fast terminal file manager written in Rust, based on async I/O
@@ -162,18 +184,14 @@ brew "zoxide"
 brew "zsh-autosuggestions"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# CLI tool for Cloudflare Workers
-brew "cloudflare-wrangler"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun", trusted: true
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Server and cloud storage browser
 cask "cyberduck"
-# Voice and text chat software
-cask "discord@canary"
-# A terminal-based Docker container monitoring tool
-cask "amir20/dtop/dtop"
 # Web browser
 cask "firefox"
 cask "font-hack-nerd-font"
@@ -187,6 +205,10 @@ cask "github"
 cask "iina"
 # Vector graphics editor
 cask "inkscape"
+# Trims video and audio files losslessly
+cask "losslesscut"
+# VPN client for secure internet access and private browsing
+cask "nordvpn"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Kubernetes and container management on the desktop
@@ -205,9 +227,9 @@ cask "tunnelbear"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
-mas "Gifski", id: 1351639930
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 mas "HazeOver", id: 430798174
-mas "Klack", id: 6446206067
 mas "Numbers", id: 409203825
 vscode "anthropic.claude-code"
 vscode "astral-sh.ty"
@@ -260,23 +282,29 @@ vscode "ms-vscode.remote-server"
 vscode "ms-vscode.test-adapter-converter"
 vscode "ms-vscode.vscode-typescript-next"
 vscode "nefrob.vscode-just-syntax"
-vscode "njqdev.vscode-python-typehint"
 vscode "oderwat.indent-rainbow"
 vscode "rust-lang.rust-analyzer"
 vscode "tamasfe.even-better-toml"
 vscode "teabyii.ayu"
+vscode "typescriptteam.native-preview"
 vscode "usernamehw.errorlens"
 vscode "vadimcn.vscode-lldb"
 vscode "vitest.explorer"
 vscode "yinfei.luahelper"
 vscode "yoavbls.pretty-ts-errors"
+cargo "cargo-binstall"
+cargo "cargo-crap"
+cargo "cargo-fuzz"
 cargo "cargo-llvm-cov"
 cargo "cargo-nextest"
 cargo "flamegraph"
+cargo "just-lsp"
+cargo "minefair", source: "https://github.com/LyricLy/minefair"
 cargo "prek"
 cargo "repgrep"
 cargo "samply"
 cargo "wasm-bindgen-cli"
+cargo "wasm-pack"
 uv "ruff"
 uv "ty"
 npm "cronstrue"
