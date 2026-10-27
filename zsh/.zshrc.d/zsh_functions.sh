@@ -40,6 +40,10 @@ search_with_zoxide() {
     fi
 }
 
+clone() {
+    git clone "git@github.com:$1.git"
+}
+
 y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
