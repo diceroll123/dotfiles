@@ -3,6 +3,9 @@
 palette = 'pastel_brite'
 # [pastel, pastel_brite, catppuccin_mocha]
 
+# Wait indefinitely for directory scans; never print the timeout warning.
+scan_timeout = 0
+
 format = """
 [╭](gray)\
 [](bg0)\
