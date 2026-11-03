@@ -41,7 +41,16 @@ search_with_zoxide() {
 }
 
 clone() {
-    git clone "git@github.com:$1.git"
+    local target="$1"
+    shift
+    case "$target" in
+        git@*:*|*://*)
+            git clone "$target" "$@"
+            ;;
+        *)
+            git clone "git@github.com:${target%.git}.git" "$@"
+            ;;
+    esac
 }
 
 y() {
